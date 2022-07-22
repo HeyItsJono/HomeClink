@@ -13,7 +13,7 @@ end
 -- Expand unescaped tildes with rl.expandetilde. Returns two values, the first is the expanded input command, the second is a boolean indicating whether any tildes were expanded. This second value not used in this script.
 local function cmd_tilde_expander(input)
 	local escaped_input = tilde_escape(input)
-	local expanded_input, was_expanded = rl.expandtilde(escaped_input)
+	local expanded_input, was_expanded = rl.expandtilde(escaped_input, true)
 	local descaped_input = tilde_descape(expanded_input)
 	return descaped_input
 end
